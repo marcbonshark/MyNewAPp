@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>elev8 · Your BMI</title>
+<meta name="description" content="Your BMI, read the way an athlete should: alongside FFMI for your type of training.">
+<link rel="stylesheet" href="css/organic.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body class="bn">
+
+<header>
+  <nav class="nav site-nav wrap" aria-label="Main">
+    <a class="nav-brand" href="index.html">
+      <svg class="logo" width="46" height="24" viewBox="0 0 100 50" aria-hidden="true"><path class="logo-ink" d="M50 25C38 6 10 6 10 25S38 44 50 25 90 6 90 25 62 44 50 25Z"/><path class="logo-fill" d="M50 25C38 6 10 6 10 25S38 44 50 25 90 6 90 25 62 44 50 25Z"/><path class="logo-hi" d="M18 20C22 13 30 12 36 15"/><path class="logo-hi" d="M64 15C70 12 78 13 82 20"/></svg>
+      <span>elev8</span>
+    </a>
+    <a class="nav-link" href="#" aria-current="page">Calculator</a>
+    <a class="nav-link" href="#">Science</a>
+    <a class="nav-link" href="#">App</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="bn-top" aria-live="polite">
+    <h6>Your BMI</h6>
+    <div class="bn-hero">
+      <span class="num" data-text="bmi"></span>
+      <div class="bn-hero-copy">
+        <span class="tag tag-accent" data-text="bmiCat"></span>
+        <p data-text="verdict"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bn-grid">
+    <form class="bn-sheet" onsubmit="return false" aria-label="Adjust your stats">
+      <div class="bn-sheet-head">
+        <span class="title">Adjust</span>
+        <div class="seg" role="radiogroup" aria-label="Units">
+          <label class="seg-opt"><input type="radio" name="unit" data-unit="metric">kg · cm</label>
+          <label class="seg-opt"><input type="radio" name="unit" data-unit="imperial">lb · ft</label>
+        </div>
+      </div>
+      <div class="bn-row"><label for="h">Height</label><input id="h" type="range" min="140" max="220" data-input="heightCm"><strong data-text="heightLabel"></strong></div>
+      <div class="bn-row"><label for="w">Weight</label><input id="w" type="range" min="40" max="160" data-input="weightKg"><strong data-text="weightLabel"></strong></div>
+      <div class="bn-row"><label for="bf">Body fat</label><input id="bf" type="range" min="4" max="35" data-input="bf" style="--range:var(--color-accent-2)"><strong data-text="bfLabel"></strong></div>
+      <div class="bn-row-training bn-row">
+        <span id="training-label">Training</span>
+        <div class="bn-sports" role="group" aria-labelledby="training-label">
+          <button type="button" class="btn btn-secondary" data-sport="strength">Strength</button>
+          <button type="button" class="btn btn-secondary" data-sport="endurance">Endurance</button>
+          <button type="button" class="btn btn-secondary" data-sport="team">Team sport</button>
+          <button type="button" class="btn btn-secondary" data-sport="physique">Physique</button>
+        </div>
+      </div>
+    </form>
+
+    <aside class="bn-read" aria-live="polite">
+      <h6>The athlete's read</h6>
+      <div class="bn-read-num"><span class="num" data-text="ffmi"></span><span>FFMI</span></div>
+      <p><span data-text="ffmiCat"></span> for a <span data-text="sportName"></span> athlete. Typical range: <span data-text="sportRange"></span>.</p>
+      <div class="track bn-ffmi" data-vars="pos=ffmiPos l=rangeL w=rangeW" aria-hidden="true">
+        <div class="bn-ffmi-range"></div>
+        <div class="thumb"></div>
+      </div>
+      <div class="bn-ticks" aria-hidden="true"><span>16</span><span>20</span><span>24</span><span>28</span></div>
+    </aside>
+  </section>
+</main>
+
+<script src="js/bmi.js"></script>
+<script>Elev8.mount(document);</script>
+</body>
+</html>

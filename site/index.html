@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>elev8 · BMI calculator directions</title>
+<link rel="stylesheet" href="css/organic.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+  .ix { padding: 56px 56px 72px; display: flex; flex-direction: column; gap: 32px; }
+  .ix h1 { font-size: clamp(40px, 5vw, 56px); margin: 0; letter-spacing: -0.03em; }
+  .ix-lede { margin: 0; font-size: 18px; max-width: 560px; color: var(--color-neutral-700); }
+  .ix-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .ix-grid .card { padding: 28px; gap: 10px; color: inherit; text-decoration: none; transition: box-shadow .2s, transform .2s; }
+  .ix-grid .card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .ix-grid .card-kicker { color: var(--color-accent-700); }
+  .ix-swatch { height: 96px; border-radius: var(--radius-lg); margin-bottom: 8px; }
+  @media (max-width: 860px) { .ix-grid { grid-template-columns: minmax(0, 1fr); } }
+  @media (max-width: 560px) { .ix { padding: 32px 16px 48px; } }
+</style>
+</head>
+<body class="pp">
+<header>
+  <nav class="nav site-nav wrap" aria-label="Main">
+    <a class="nav-brand" href="index.html">
+      <svg class="logo" width="46" height="24" viewBox="0 0 100 50" aria-hidden="true"><path class="logo-ink" d="M50 25C38 6 10 6 10 25S38 44 50 25 90 6 90 25 62 44 50 25Z"/><path class="logo-fill" d="M50 25C38 6 10 6 10 25S38 44 50 25 90 6 90 25 62 44 50 25Z"/><path class="logo-hi" d="M18 20C22 13 30 12 36 15"/><path class="logo-hi" d="M64 15C70 12 78 13 82 20"/></svg>
+      <span>elev8</span>
+    </a>
+  </nav>
+</header>
+<main class="wrap ix">
+  <h1>BMI calculator — three directions</h1>
+  <p class="ix-lede">Each page is fully working: drag the sliders to see BMI, FFMI and body composition update.</p>
+  <div class="ix-grid">
+    <a class="card" href="product.html">
+      <div class="ix-swatch" style="background:var(--color-surface)"></div>
+      <div class="card-kicker">1a</div>
+      <div class="card-title">Product page</div>
+      <p class="card-body">Hero headline beside a calculator card with a BMI scale bar; lean mass, FFMI and fat mass below.</p>
+    </a>
+    <a class="card" href="big-number.html">
+      <div class="ix-swatch" style="background:var(--color-accent-2-800)"></div>
+      <div class="card-kicker">1b</div>
+      <div class="card-title">One big number</div>
+      <p class="card-body">Your BMI is the hero. Controls sit beneath like a settings sheet, with an FFMI read for your training type.</p>
+    </a>
+    <a class="card" href="rings.html">
+      <div class="ix-swatch" style="background:var(--color-accent-2-900)"></div>
+      <div class="card-kicker">1c</div>
+      <div class="card-title">Rings</div>
+      <p class="card-body">BMI, FFMI and body fat as three concentric rings on a dark sage stage.</p>
+    </a>
+  </div>
+</main>
+</body>
+</html>
