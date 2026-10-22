@@ -4,8 +4,7 @@ A static site built from the Claude Design handoff in `../project/elev8 BMI.dc.h
 
 | Page | Design | What it is |
 | --- | --- | --- |
-| `index.html` | — | Landing page: brand statement, principles, and links to the three calculators |
-| `product.html` | 1a | Hero headline beside a calculator card with a BMI scale bar; lean mass, FFMI and fat mass cards below |
+| `index.html` | — | Landing page: brand statement, principles, and links to the two calculators |
 | `big-number.html` | 1b | BMI as the hero, a settings-sheet of controls, a training-type picker and an FFMI panel |
 | `rings.html` | 1c | BMI, FFMI and body fat as concentric rings on dark sage |
 
