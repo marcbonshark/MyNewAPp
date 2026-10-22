@@ -55,14 +55,10 @@ input[type="range"] { width: 100%; min-width: 0; margin: 0; accent-color: var(--
 .lp-pillars .card-title { font-size: 24px; margin: 0; }
 .lp-pillars .card-body { font-size: 15px; line-height: 1.5; }
 
-.lp-calcs { display: flex; flex-direction: column; gap: 16px; padding: 56px 56px 88px; scroll-margin-top: 64px; }
-.lp-calcs h2 { font-size: clamp(34px, 4vw, 48px); margin: 0; letter-spacing: -0.02em; }
-.lp-calcs-lede { margin: 0 0 16px; font-size: 18px; max-width: 560px; color: var(--color-neutral-700); }
-.lp-calcs-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-.lp-calcs-grid .card { padding: 28px; gap: 10px; color: inherit; text-decoration: none; transition: box-shadow .2s, transform .2s; }
-.lp-calcs-grid .card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-.lp-calcs-grid .card-kicker { color: var(--color-accent-700); }
-.lp-swatch { height: 96px; border-radius: var(--radius-lg); margin-bottom: 8px; }
+.lp-section { scroll-margin-top: 64px; }
+.lp-section-head { display: flex; flex-direction: column; gap: 10px; padding: 72px 56px 0; }
+.lp-section-head h2 { font-size: clamp(34px, 4vw, 48px); margin: 0; letter-spacing: -0.02em; }
+.lp-section-head p { margin: 0; font-size: 18px; max-width: 560px; color: var(--color-neutral-700); }
 
 .lp-footer {
   display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px;
@@ -71,8 +67,8 @@ input[type="range"] { width: 100%; min-width: 0; margin: 0; accent-color: var(--
 .lp-footer .num { font-size: 22px; color: var(--color-text); }
 
 /* ── 1b · one big number ────────────────────────────────────────────────── */
-.bn { background: var(--color-neutral-100); --logo-fill: var(--color-accent-2); --logo-hi: var(--color-accent-2-200); }
-.bn-top { padding: 56px 56px 0; display: flex; flex-direction: column; gap: 8px; }
+.bn { background: var(--color-neutral-100); }
+.bn-top { padding: 40px 56px 0; display: flex; flex-direction: column; gap: 8px; }
 .bn-top h6 { margin: 0; color: var(--color-accent-700); }
 .bn-hero { display: flex; align-items: flex-end; gap: 32px; }
 .bn-hero .num { font-size: clamp(132px, 20.3vw, 260px); line-height: .85; letter-spacing: -0.04em; }
@@ -111,13 +107,9 @@ input[type="range"] { width: 100%; min-width: 0; margin: 0; accent-color: var(--
 .bn-ticks { display: flex; justify-content: space-between; font-size: 12px; color: var(--color-accent-2-300); }
 
 /* ── 1c · rings ─────────────────────────────────────────────────────────── */
-.rg {
-  background: var(--color-accent-2-900); color: var(--color-accent-2-100);
-  --logo-ink: var(--color-accent-2-100);
-}
-.rg .nav a:hover { color: var(--color-accent-400); }
+.rg { background: var(--color-accent-2-900); color: var(--color-accent-2-100); }
 .rg-title { padding: 64px 56px 0; }
-.rg-title h1 { font-size: clamp(42px, 5.6vw, 72px); line-height: 1; margin: 0; max-width: 760px; letter-spacing: -0.03em; color: var(--color-neutral-100); text-wrap: balance; }
+.rg-title h2 { font-size: clamp(42px, 5.6vw, 72px); line-height: 1; margin: 0; max-width: 760px; letter-spacing: -0.03em; color: var(--color-neutral-100); text-wrap: balance; }
 .rg-body { display: grid; grid-template-columns: 460px minmax(0, 1fr); gap: 72px; padding: 56px 56px 80px; align-items: center; }
 
 .rg-rings { position: relative; width: 100%; max-width: 460px; aspect-ratio: 1; container-type: inline-size; }
@@ -152,9 +144,9 @@ input[type="range"] { width: 100%; min-width: 0; margin: 0; accent-color: var(--
   .site-nav { padding: 16px 32px; }
   .lp-hero { padding: 64px 32px 72px; }
   .lp-belief-inner { padding: 72px 32px; }
-  .lp-pillars, .lp-calcs-grid { grid-template-columns: minmax(0, 1fr); }
+  .lp-pillars { grid-template-columns: minmax(0, 1fr); }
   .lp-pillars { padding: 56px 32px 24px; }
-  .lp-calcs { padding: 48px 32px 64px; }
+  .lp-section-head { padding: 56px 32px 0; }
   .lp-footer { padding: 28px 32px 40px; }
   .bn-top { padding: 40px 32px 0; }
   .bn-grid { grid-template-columns: minmax(0, 1fr); padding: 40px 32px 56px; }
@@ -177,8 +169,7 @@ input[type="range"] { width: 100%; min-width: 0; margin: 0; accent-color: var(--
   .lp-ctas .btn { font-size: 16px; padding: 12px 22px; }
   .lp-belief-inner { padding: 56px 16px; gap: 22px; }
   .lp-pillars { padding: 40px 16px 16px; gap: 14px; }
-  .lp-calcs { padding: 40px 16px 48px; }
-  .lp-calcs-grid { gap: 14px; }
+  .lp-section-head { padding: 40px 16px 0; }
   .lp-footer { padding: 24px 16px 32px; }
 
   .bn-top { padding: 28px 16px 0; }

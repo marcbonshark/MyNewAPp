@@ -17,8 +17,9 @@
       <span>elev8</span>
     </a>
     <a class="nav-link" href="#belief">What we believe</a>
-    <a class="nav-link" href="#calculators">Calculators</a>
-    <a class="btn btn-primary" href="big-number.html">Calculate your BMI</a>
+    <a class="nav-link" href="#calculator">Calculator</a>
+    <a class="nav-link" href="#rings">Rings</a>
+    <a class="btn btn-primary" href="#calculator">Calculate your BMI</a>
   </nav>
 </header>
 
@@ -28,7 +29,7 @@
     <h1>You are more than a number. <em>Elevate</em> how you read it.</h1>
     <p>elev8 exists for people who train. We take the numbers health tools hand you and give them the context your body has earned — so you can measure progress, not just weight.</p>
     <div class="lp-ctas">
-      <a class="btn btn-primary" href="big-number.html">Calculate your BMI</a>
+      <a class="btn btn-primary" href="#calculator">Calculate your BMI</a>
       <a class="btn btn-secondary" href="#belief">What we believe</a>
     </div>
   </section>
@@ -62,22 +63,103 @@
     </div>
   </section>
 
-  <section class="lp-calcs wrap" id="calculators" aria-labelledby="calcs-title">
-    <h2 id="calcs-title">Find your number</h2>
-    <p class="lp-calcs-lede">Two ways to see the same honest reading. Drag the sliders and watch BMI, FFMI and body composition update live.</p>
-    <div class="lp-calcs-grid">
-      <a class="card" href="big-number.html">
-        <div class="lp-swatch" style="background:var(--color-accent-2-800)"></div>
-        <div class="card-kicker">Focused</div>
-        <div class="card-title">One big number</div>
-        <p class="card-body">Your BMI front and centre, with an FFMI read for your training type.</p>
-      </a>
-      <a class="card" href="rings.html">
-        <div class="lp-swatch" style="background:var(--color-accent-2-900)"></div>
-        <div class="card-kicker">Visual</div>
-        <div class="card-title">Rings</div>
-        <p class="card-body">BMI, FFMI and body fat as three concentric rings.</p>
-      </a>
+  <section class="bn lp-section" id="calculator" aria-labelledby="calc-title">
+    <div class="wrap">
+      <div class="lp-section-head">
+        <h2 id="calc-title">Find your number</h2>
+        <p>Drag the sliders and pick your training type. Your BMI and FFMI update live.</p>
+      </div>
+
+      <div class="bn-top" aria-live="polite">
+        <h6>Your BMI</h6>
+        <div class="bn-hero">
+          <span class="num" data-text="bmi"></span>
+          <div class="bn-hero-copy">
+            <span class="tag tag-accent" data-text="bmiCat"></span>
+            <p data-text="verdict"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bn-grid">
+        <form class="bn-sheet" onsubmit="return false" aria-label="Adjust your stats">
+          <div class="bn-sheet-head">
+            <span class="title">Adjust</span>
+            <div class="seg" role="radiogroup" aria-label="Units">
+              <label class="seg-opt"><input type="radio" name="bn-unit" data-unit="metric">kg · cm</label>
+              <label class="seg-opt"><input type="radio" name="bn-unit" data-unit="imperial">lb · ft</label>
+            </div>
+          </div>
+          <div class="bn-row"><label for="bn-h">Height</label><input id="bn-h" type="range" min="140" max="220" data-input="heightCm"><strong data-text="heightLabel"></strong></div>
+          <div class="bn-row"><label for="bn-w">Weight</label><input id="bn-w" type="range" min="40" max="160" data-input="weightKg"><strong data-text="weightLabel"></strong></div>
+          <div class="bn-row"><label for="bn-bf">Body fat</label><input id="bn-bf" type="range" min="4" max="35" data-input="bf" style="--range:var(--color-accent-2)"><strong data-text="bfLabel"></strong></div>
+          <div class="bn-row-training bn-row">
+            <span id="training-label">Training</span>
+            <div class="bn-sports" role="group" aria-labelledby="training-label">
+              <button type="button" class="btn btn-secondary" data-sport="strength">Strength</button>
+              <button type="button" class="btn btn-secondary" data-sport="endurance">Endurance</button>
+              <button type="button" class="btn btn-secondary" data-sport="team">Team sport</button>
+              <button type="button" class="btn btn-secondary" data-sport="physique">Physique</button>
+            </div>
+          </div>
+        </form>
+
+        <aside class="bn-read" aria-live="polite">
+          <h6>The athlete's read</h6>
+          <div class="bn-read-num"><span class="num" data-text="ffmi"></span><span>FFMI</span></div>
+          <p><span data-text="ffmiCat"></span> for a <span data-text="sportName"></span> athlete. Typical range: <span data-text="sportRange"></span>.</p>
+          <div class="track bn-ffmi" data-vars="pos=ffmiPos l=rangeL w=rangeW" aria-hidden="true">
+            <div class="bn-ffmi-range"></div>
+            <div class="thumb"></div>
+          </div>
+          <div class="bn-ticks" aria-hidden="true"><span>16</span><span>20</span><span>24</span><span>28</span></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="rg lp-section" id="rings" aria-labelledby="rings-title">
+    <div class="wrap">
+      <div class="rg-title">
+        <h2 id="rings-title">Close the gap between weight and what it's made of.</h2>
+      </div>
+
+      <div class="rg-body">
+        <div class="rg-rings" role="img" aria-label="Rings for BMI, FFMI and body fat">
+          <svg viewBox="0 0 460 460" aria-hidden="true">
+            <circle cx="230" cy="230" r="200" stroke="var(--color-accent-800)"/>
+            <circle class="arc" cx="230" cy="230" r="200" stroke="var(--color-accent-500)" stroke-dasharray="1256.6" data-attr="stroke-dashoffset=ringBmi"/>
+            <circle cx="230" cy="230" r="158" stroke="var(--color-accent-2-700)"/>
+            <circle class="arc" cx="230" cy="230" r="158" stroke="var(--color-accent-2-400)" stroke-dasharray="992.7" data-attr="stroke-dashoffset=ringFfmi"/>
+            <circle cx="230" cy="230" r="116" stroke="var(--color-neutral-800)"/>
+            <circle class="arc" cx="230" cy="230" r="116" stroke="var(--color-neutral-300)" stroke-dasharray="728.8" data-attr="stroke-dashoffset=ringBf"/>
+          </svg>
+          <div class="rg-center"><span class="num" data-text="bmi"></span><small>BMI</small></div>
+        </div>
+
+        <div class="rg-side">
+          <div class="rg-stats" aria-live="polite">
+            <div class="rg-stat"><span class="k-bmi">BMI</span><span class="num" data-text="bmi"></span><span data-text="bmiCat"></span></div>
+            <div class="rg-stat"><span>FFMI</span><span class="num" data-text="ffmi"></span><span data-text="ffmiCat"></span></div>
+            <div class="rg-stat"><span class="k-bf">Body fat</span><span class="num" data-text="bfLabel"></span><span><span data-text="fatLabel"></span> fat mass</span></div>
+          </div>
+
+          <form class="rg-panel" onsubmit="return false" aria-label="Your stats">
+            <div class="rg-panel-head">
+              <span class="title">Your stats</span>
+              <div class="seg" role="radiogroup" aria-label="Units">
+                <label class="seg-opt"><input type="radio" name="rg-unit" data-unit="metric">Metric</label>
+                <label class="seg-opt"><input type="radio" name="rg-unit" data-unit="imperial">Imperial</label>
+              </div>
+            </div>
+            <div class="rg-row"><label for="rg-h">Height</label><input id="rg-h" type="range" min="140" max="220" data-input="heightCm" style="--range:var(--color-accent-2-400)"><strong data-text="heightLabel"></strong></div>
+            <div class="rg-row"><label for="rg-w">Weight</label><input id="rg-w" type="range" min="40" max="160" data-input="weightKg" style="--range:var(--color-accent-400)"><strong data-text="weightLabel"></strong></div>
+            <div class="rg-row"><label for="rg-bf">Body fat</label><input id="rg-bf" type="range" min="4" max="35" data-input="bf" style="--range:var(--color-neutral-300)"><strong data-text="bfLabel"></strong></div>
+          </form>
+
+          <p class="rg-verdict" data-text="verdict" aria-live="polite"></p>
+        </div>
+      </div>
     </div>
   </section>
 </main>
@@ -86,6 +168,12 @@
   <span class="num">elev8</span>
   <span>Know your number. Then read past it.</span>
 </footer>
+
+<script src="js/bmi.js"></script>
+<script>
+  Elev8.mount(document.getElementById('calculator'));
+  Elev8.mount(document.getElementById('rings'));
+</script>
 
 </body>
 </html>
