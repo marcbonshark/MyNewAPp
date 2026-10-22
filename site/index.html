@@ -3,54 +3,95 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>elev8 · BMI calculator directions</title>
+<title>elev8 · Numbers for bodies that train</title>
+<meta name="description" content="elev8 believes your body is more than a number. We pair BMI with lean mass so athletes get a reading that actually means something.">
 <link rel="stylesheet" href="css/organic.css">
 <link rel="stylesheet" href="css/app.css">
-<style>
-  .ix { padding: 56px 56px 72px; display: flex; flex-direction: column; gap: 32px; }
-  .ix h1 { font-size: clamp(40px, 5vw, 56px); margin: 0; letter-spacing: -0.03em; }
-  .ix-lede { margin: 0; font-size: 18px; max-width: 560px; color: var(--color-neutral-700); }
-  .ix-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-  .ix-grid .card { padding: 28px; gap: 10px; color: inherit; text-decoration: none; transition: box-shadow .2s, transform .2s; }
-  .ix-grid .card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-  .ix-grid .card-kicker { color: var(--color-accent-700); }
-  .ix-swatch { height: 96px; border-radius: var(--radius-lg); margin-bottom: 8px; }
-  @media (max-width: 860px) { .ix-grid { grid-template-columns: minmax(0, 1fr); } }
-  @media (max-width: 560px) { .ix { padding: 32px 16px 48px; } }
-</style>
 </head>
 <body class="pp">
-<header>
+
+<header class="pp-header">
   <nav class="nav site-nav wrap" aria-label="Main">
     <a class="nav-brand" href="index.html">
       <svg class="logo" width="46" height="24" viewBox="0 0 100 50" aria-hidden="true"><path class="logo-ink" d="M50 25C38 6 10 6 10 25S38 44 50 25 90 6 90 25 62 44 50 25Z"/><path class="logo-fill" d="M50 25C38 6 10 6 10 25S38 44 50 25 90 6 90 25 62 44 50 25Z"/><path class="logo-hi" d="M18 20C22 13 30 12 36 15"/><path class="logo-hi" d="M64 15C70 12 78 13 82 20"/></svg>
       <span>elev8</span>
     </a>
+    <a class="nav-link" href="#belief">What we believe</a>
+    <a class="nav-link" href="#calculators">Calculators</a>
+    <a class="btn btn-primary" href="product.html">Calculate your BMI</a>
   </nav>
 </header>
-<main class="wrap ix">
-  <h1>BMI calculator — three directions</h1>
-  <p class="ix-lede">Each page is fully working: drag the sliders to see BMI, FFMI and body composition update.</p>
-  <div class="ix-grid">
-    <a class="card" href="product.html">
-      <div class="ix-swatch" style="background:var(--color-surface)"></div>
-      <div class="card-kicker">1a</div>
-      <div class="card-title">Product page</div>
-      <p class="card-body">Hero headline beside a calculator card with a BMI scale bar; lean mass, FFMI and fat mass below.</p>
-    </a>
-    <a class="card" href="big-number.html">
-      <div class="ix-swatch" style="background:var(--color-accent-2-800)"></div>
-      <div class="card-kicker">1b</div>
-      <div class="card-title">One big number</div>
-      <p class="card-body">Your BMI is the hero. Controls sit beneath like a settings sheet, with an FFMI read for your training type.</p>
-    </a>
-    <a class="card" href="rings.html">
-      <div class="ix-swatch" style="background:var(--color-accent-2-900)"></div>
-      <div class="card-kicker">1c</div>
-      <div class="card-title">Rings</div>
-      <p class="card-body">BMI, FFMI and body fat as three concentric rings on a dark sage stage.</p>
-    </a>
-  </div>
+
+<main>
+  <section class="lp-hero wrap">
+    <span class="tag tag-accent-2">Built for athletes</span>
+    <h1>You are more than a number. <em>Elevate</em> how you read it.</h1>
+    <p>elev8 exists for people who train. We take the numbers health tools hand you and give them the context your body has earned — so you can measure progress, not just weight.</p>
+    <div class="pp-ctas">
+      <a class="btn btn-primary" href="product.html">Calculate your BMI</a>
+      <a class="btn btn-secondary" href="#belief">What we believe</a>
+    </div>
+  </section>
+
+  <section class="lp-belief" id="belief" aria-labelledby="belief-title">
+    <div class="wrap lp-belief-inner">
+      <h6 id="belief-title">Our statement</h6>
+      <blockquote>
+        <p>BMI was written for populations. You are not a population. You lift, run, sprint and recover — and a chart that can’t tell muscle from fat shouldn’t get the final word on your health.</p>
+        <p>So we built elev8: honest numbers, read in context, for every body that trains.</p>
+      </blockquote>
+      <p class="lp-sign">— The elev8 team</p>
+    </div>
+  </section>
+
+  <section class="lp-pillars wrap" aria-label="Our principles">
+    <div class="card">
+      <div class="card-kicker">01 · Honest</div>
+      <h2 class="card-title">Real numbers, no flattery</h2>
+      <p class="card-body">We show you the standard BMI exactly as doctors calculate it. Nothing is hidden or softened.</p>
+    </div>
+    <div class="card">
+      <div class="card-kicker">02 · In context</div>
+      <h2 class="card-title">Muscle counts</h2>
+      <p class="card-body">Lean mass and FFMI sit right beside BMI, so a heavy, strong body isn’t mistaken for an unhealthy one.</p>
+    </div>
+    <div class="card">
+      <div class="card-kicker">03 · For athletes</div>
+      <h2 class="card-title">Made for training</h2>
+      <p class="card-body">Ranges for strength, endurance, team sport and physique — because your goal shapes what “healthy” looks like.</p>
+    </div>
+  </section>
+
+  <section class="lp-calcs wrap" id="calculators" aria-labelledby="calcs-title">
+    <h2 id="calcs-title">Find your number</h2>
+    <p class="lp-calcs-lede">Three ways to see the same honest reading. Drag the sliders and watch BMI, FFMI and body composition update live.</p>
+    <div class="lp-calcs-grid">
+      <a class="card" href="product.html">
+        <div class="lp-swatch" style="background:var(--color-accent-400)"></div>
+        <div class="card-kicker">Classic</div>
+        <div class="card-title">Calculator</div>
+        <p class="card-body">Your stats beside a BMI scale, with lean mass, FFMI and fat mass below.</p>
+      </a>
+      <a class="card" href="big-number.html">
+        <div class="lp-swatch" style="background:var(--color-accent-2-800)"></div>
+        <div class="card-kicker">Focused</div>
+        <div class="card-title">One big number</div>
+        <p class="card-body">Your BMI front and centre, with an FFMI read for your training type.</p>
+      </a>
+      <a class="card" href="rings.html">
+        <div class="lp-swatch" style="background:var(--color-accent-2-900)"></div>
+        <div class="card-kicker">Visual</div>
+        <div class="card-title">Rings</div>
+        <p class="card-body">BMI, FFMI and body fat as three concentric rings.</p>
+      </a>
+    </div>
+  </section>
 </main>
+
+<footer class="lp-footer wrap">
+  <span class="num">elev8</span>
+  <span>Know your number. Then read past it.</span>
+</footer>
+
 </body>
 </html>
